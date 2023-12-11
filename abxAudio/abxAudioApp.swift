@@ -11,7 +11,11 @@ import SwiftUI
 struct abxAudioApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            var testingState = TestingState()
+            ABXTestingView(
+                presenter: ABXTestingPresenter(testingState: testingState),
+                testingState: testingState
+            )
         }
     }
 }
