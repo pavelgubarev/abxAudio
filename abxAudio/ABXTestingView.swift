@@ -48,15 +48,15 @@ struct ABXTestingView: View {
         self.testingState = testingState
     }
 
-    private func makeAnswerButton(_ answer: Track) -> some View {
+    private func makeAnswerButton(_ answer: TrackCode) -> some View {
         return Button(action: { presenter.didTapAnswer(answer)}) {
             Text("X is " + answer.rawValue).font(.system(size: 30))
         }
     }
 
-    private func makePlayButton(_ track: Track) -> some View {
-        Button(action: { presenter.didTapPlay(track)}) {
-            Text("Play " + track.rawValue).font(.system(size: 30))
+    private func makePlayButton(_ TrackCode: TrackCode) -> some View {
+        Button(action: { presenter.didTapPlay(TrackCode)}) {
+            Text("Play " + TrackCode.rawValue).font(.system(size: 30))
         }
     }
 }

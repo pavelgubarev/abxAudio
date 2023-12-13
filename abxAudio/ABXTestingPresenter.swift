@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Track: String {
+public enum TrackCode: String {
     case A
     case B
     case X
@@ -21,11 +21,11 @@ final class ABXTestingPresenter: ABXTestingPresenterProtocol {
         //
     }
 
-    func didTapPlay(_ track: Track) {
-        testingState.isPlaying = track
+    func didTapPlay(_ track: TrackCode) {
+        testingState.isPlaying = TrackCode
     }
 
-    func didTapAnswer(_ track: Track) {
+    func didTapAnswer(_ track: TrackCode) {
 
     }
 

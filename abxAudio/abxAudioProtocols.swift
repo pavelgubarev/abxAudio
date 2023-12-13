@@ -9,10 +9,10 @@ import Foundation
 
 protocol ABXTestingPresenterProtocol {
     func didAppear()
-    func didTapPlay(_ track: Track)
-    func didTapAnswer(_ track: Track)
+    func didTapPlay(_ track: TrackCode)
+    func didTapAnswer(_ track: TrackCode)
 }
 
 protocol ABXTestingViewProtocol {
-    func play(_ track: Track)
+    func play(_ track: TrackCode)
 }
