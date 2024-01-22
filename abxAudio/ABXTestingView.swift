@@ -15,7 +15,7 @@ struct ABXTestingView: View {
 
     var body: some View {
         VStack {
-            Text("My score: 3/5").font(.system(size: 30))
+            Text(makeMyScoreText()).font(.system(size: 30))
             Spacer()
             VStack {
                 Text("My guess:").font(.system(size: 30)).padding([.bottom], 20)
@@ -25,7 +25,7 @@ struct ABXTestingView: View {
                 makeAnswerButton(.B)
             }
             Spacer()
-            Text("Currently playing " + testingState.isPlaying.rawValue)
+            Text("Currently playing " + testingState.currentlyPlayingTrack.rawValue)
             Spacer()
             HStack {
                 makePlayButton(.A)
@@ -48,6 +48,13 @@ struct ABXTestingView: View {
         self.testingState = testingState
     }
 
+    private func makeMyScoreText() -> String {
+        return "My Score: "
+        + String(testingState.correctAnswersCount)
+        + "/"
+        + String(testingState.answersCount)
+    }
+
     private func makeAnswerButton(_ answer: TrackCode) -> some View {
         return Button(action: { presenter.didTapAnswer(answer)}) {
             Text("X is " + answer.rawValue).font(.system(size: 30))
@@ -64,8 +71,10 @@ struct ABXTestingView: View {
 struct ABXTestingView_Previews: PreviewProvider {
     static var previews: some View {
         let mockTestingState = TestingState()
+        let tracksToCompare = [TrackCode.A: "Time-30", TrackCode.B: "Time-50"]
+
         ABXTestingView(
-            presenter: ABXTestingPresenter(testingState: mockTestingState),
+            presenter: ABXTestingPresenter(testingState: mockTestingState, tracksToTest: tracksToCompare),
             testingState: mockTestingState
         )
     }

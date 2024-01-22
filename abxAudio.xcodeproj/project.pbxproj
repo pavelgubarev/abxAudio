@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E7CD6992B5E869D002547B1 /* testFiles in Resources */ = {isa = PBXBuildFile; fileRef = 4E7CD6982B5E869D002547B1 /* testFiles */; };
 		4EDCBF142B1DEB3E000746C9 /* abxAudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCBF132B1DEB3E000746C9 /* abxAudioApp.swift */; };
 		4EDCBF182B1DEB41000746C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCBF172B1DEB41000746C9 /* Assets.xcassets */; };
 		4EDCBF1B2B1DEB41000746C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCBF1A2B1DEB41000746C9 /* Preview Assets.xcassets */; };
@@ -14,9 +15,11 @@
 		4EDCBF242B21C75A000746C9 /* ABXTestingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCBF232B21C75A000746C9 /* ABXTestingPresenter.swift */; };
 		4EDCBF262B21CC22000746C9 /* abxAudioProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCBF252B21CC22000746C9 /* abxAudioProtocols.swift */; };
 		4EDCBF282B274877000746C9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCBF272B274877000746C9 /* Models.swift */; };
+		4EE8F6FF2B57F0CE000560A1 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8F6FE2B57F0CE000560A1 /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E7CD6982B5E869D002547B1 /* testFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = testFiles; sourceTree = "<group>"; };
 		4EDCBF102B1DEB3E000746C9 /* abxAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = abxAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDCBF132B1DEB3E000746C9 /* abxAudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abxAudioApp.swift; sourceTree = "<group>"; };
 		4EDCBF172B1DEB41000746C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -25,6 +28,7 @@
 		4EDCBF232B21C75A000746C9 /* ABXTestingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABXTestingPresenter.swift; sourceTree = "<group>"; };
 		4EDCBF252B21CC22000746C9 /* abxAudioProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abxAudioProtocols.swift; sourceTree = "<group>"; };
 		4EDCBF272B274877000746C9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		4EE8F6FE2B57F0CE000560A1 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +61,12 @@
 		4EDCBF122B1DEB3E000746C9 /* abxAudio */ = {
 			isa = PBXGroup;
 			children = (
+				4E7CD6982B5E869D002547B1 /* testFiles */,
 				4EDCBF132B1DEB3E000746C9 /* abxAudioApp.swift */,
 				4EDCBF212B1DEBA0000746C9 /* ABXTestingView.swift */,
 				4EDCBF272B274877000746C9 /* Models.swift */,
 				4EDCBF232B21C75A000746C9 /* ABXTestingPresenter.swift */,
+				4EE8F6FE2B57F0CE000560A1 /* AudioPlayer.swift */,
 				4EDCBF252B21CC22000746C9 /* abxAudioProtocols.swift */,
 				4EDCBF172B1DEB41000746C9 /* Assets.xcassets */,
 				4EDCBF192B1DEB41000746C9 /* Preview Content */,
@@ -136,6 +142,7 @@
 			files = (
 				4EDCBF1B2B1DEB41000746C9 /* Preview Assets.xcassets in Resources */,
 				4EDCBF182B1DEB41000746C9 /* Assets.xcassets in Resources */,
+				4E7CD6992B5E869D002547B1 /* testFiles in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +158,7 @@
 				4EDCBF222B1DEBA0000746C9 /* ABXTestingView.swift in Sources */,
 				4EDCBF142B1DEB3E000746C9 /* abxAudioApp.swift in Sources */,
 				4EDCBF282B274877000746C9 /* Models.swift in Sources */,
+				4EE8F6FF2B57F0CE000560A1 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

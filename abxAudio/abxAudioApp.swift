@@ -11,9 +11,15 @@ import SwiftUI
 struct abxAudioApp: App {
     var body: some Scene {
         WindowGroup {
-            var testingState = TestingState()
+
+            // hardcode so far
+            let testingState = TestingState()
+            let tracksToCompare = [TrackCode.A: "Time-30", TrackCode.B: "Time-50"]
+
+            let presenter = ABXTestingPresenter(testingState: testingState, tracksToTest: tracksToCompare)
+
             ABXTestingView(
-                presenter: ABXTestingPresenter(testingState: testingState),
+                presenter: presenter,
                 testingState: testingState
             )
         }

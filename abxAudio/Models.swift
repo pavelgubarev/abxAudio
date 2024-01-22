@@ -8,11 +8,8 @@
 import Foundation
 
 final class TestingState: ObservableObject {
-    @Published var isPlaying: TrackCode = .A
-    
-}
-
-struct TrackCodesToCompare {
-    let name: String
-    
+    @Published var currentlyPlayingTrack: TrackCode = .A
+    @Published var answersCount: Int = 0
+    @Published var correctAnswersCount: Int = 0
+    @Published var correctAnswer: TrackCode = .A
 }
