@@ -11,6 +11,7 @@ protocol ABXTestingPresenterProtocol {
     func didAppear()
     func didTapPlay(_ track: TrackCode)
     func didTapAnswer(_ track: TrackCode)
+    func getAudioPlayer(for track: TrackCode) -> AudioPlayer
 }
 
 protocol ABXTestingViewProtocol {

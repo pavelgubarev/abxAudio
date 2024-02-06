@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum TrackCode: String {
+public enum TrackCode: String, CaseIterable {
     case A
     case B
     case X
@@ -29,7 +29,14 @@ final class ABXTestingPresenter: ABXTestingPresenterProtocol {
 
     func didTapPlay(_ track: TrackCode) {
         testingState.currentlyPlayingTrack = track
-        audioPlayers[track]?.playOrPause()
+
+        for code in TrackCode.allCases {
+            if code == track {
+                audioPlayers[code]?.playOrPause()
+            } else {
+                audioPlayers[code]?.pause()
+            }
+        }
     }
 
     func didTapAnswer(_ answer: TrackCode) {
@@ -39,6 +46,14 @@ final class ABXTestingPresenter: ABXTestingPresenterProtocol {
         }
 
         setNextCorrectAnswer()
+    }
+
+    public func getAudioPlayer(for track: TrackCode) -> AudioPlayer {
+        guard let player = audioPlayers[track] else {
+            assertionFailure("Не был создан плеер")
+            return AudioPlayer(fileName: "")
+        }
+        return player
     }
 
     private func setNextCorrectAnswer() {

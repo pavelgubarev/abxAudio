@@ -12,6 +12,9 @@ struct ABXTestingView: View {
 
     let presenter: ABXTestingPresenterProtocol
     @ObservedObject var testingState: TestingState
+    @ObservedObject var audioPlayerA: AudioPlayer
+    @ObservedObject var audioPlayerB: AudioPlayer
+    var players = [TrackCode: AudioPlayer]()
 
     var body: some View {
         VStack {
@@ -25,7 +28,11 @@ struct ABXTestingView: View {
                 makeAnswerButton(.B)
             }
             Spacer()
-            Text("Currently playing " + testingState.currentlyPlayingTrack.rawValue)
+            VStack {
+                Text("Currently playing " + testingState.currentlyPlayingTrack.rawValue)
+                ProgressView(value: players[testingState.currentlyPlayingTrack]?.progress)
+                    .padding([.leading, .trailing], 20)
+            }
             Spacer()
             HStack {
                 makePlayButton(.A)
@@ -46,6 +53,11 @@ struct ABXTestingView: View {
     ) {
         self.presenter = presenter
         self.testingState = testingState
+
+        audioPlayerA = presenter.getAudioPlayer(for: .A)
+        audioPlayerB = presenter.getAudioPlayer(for: .B)
+        players[.A] = audioPlayerA
+        players[.B] = audioPlayerB
     }
 
     private func makeMyScoreText() -> String {

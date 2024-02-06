@@ -7,10 +7,12 @@
 
 import AVFoundation
 
-class AudioPlayer {
+class AudioPlayer: ObservableObject {
     
     var audioPlayer: AVAudioPlayer?
     var isPlaying = false
+    @Published var progress: Double = 0
+    var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     init(fileName: String) {
         if let file = Bundle.main.path(forResource: "testFiles/" + fileName, ofType: "m4a") {
@@ -22,6 +24,17 @@ class AudioPlayer {
         } else {
             print("File not found")
         }
+        _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.updateProgress()
+        }
+    }
+
+    public func updateProgress() {
+        guard let currentTime = audioPlayer?.currentTime,
+              let duration = audioPlayer?.duration else
+        { return }
+
+        progress = currentTime / duration
     }
 
     func playOrPause() {
@@ -33,5 +46,12 @@ class AudioPlayer {
             player.play()
         }
         isPlaying = !isPlaying
+    }
+
+    func pause() {
+        guard let player = audioPlayer, player.isPlaying else { return }
+
+        player.pause()
+        isPlaying = false
     }
 }
