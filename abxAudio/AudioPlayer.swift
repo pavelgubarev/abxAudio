@@ -11,7 +11,11 @@ class AudioPlayer: ObservableObject {
     
     var audioPlayer: AVAudioPlayer?
     var isPlaying = false
-    @Published var progress: Double = 0
+    @Published var progress: Double = 0 {
+        didSet {
+            setCurrentTime()
+        }
+    }
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     init(fileName: String) {
@@ -29,12 +33,19 @@ class AudioPlayer: ObservableObject {
         }
     }
 
-    public func updateProgress() {
+    private func updateProgress() {
         guard let currentTime = audioPlayer?.currentTime,
               let duration = audioPlayer?.duration else
         { return }
 
         progress = currentTime / duration
+    }
+
+    private func setCurrentTime() {
+        guard let duration = audioPlayer?.duration else
+        { return }
+
+        audioPlayer?.currentTime = duration * progress
     }
 
     func playOrPause() {
