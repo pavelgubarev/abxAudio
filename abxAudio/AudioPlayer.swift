@@ -11,11 +11,7 @@ class AudioPlayer: ObservableObject {
     
     var audioPlayer: AVAudioPlayer?
     var isPlaying = false
-    @Published var progress: Double = 0 {
-        didSet {
-            setCurrentTime()
-        }
-    }
+    @Published var progress: Double = 0
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     init(fileName: String) {
@@ -29,11 +25,11 @@ class AudioPlayer: ObservableObject {
             print("File not found")
         }
         _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.updateProgress()
+            self.updatePublishedProgress()
         }
     }
 
-    private func updateProgress() {
+    private func updatePublishedProgress() {
         guard let currentTime = audioPlayer?.currentTime,
               let duration = audioPlayer?.duration else
         { return }
@@ -41,7 +37,7 @@ class AudioPlayer: ObservableObject {
         progress = currentTime / duration
     }
 
-    private func setCurrentTime() {
+    func setProgress(_ progress: Double) {
         guard let duration = audioPlayer?.duration else
         { return }
 

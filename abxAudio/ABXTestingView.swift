@@ -15,7 +15,7 @@ struct ABXTestingView: View {
     @ObservedObject private var audioPlayerA: AudioPlayer
     @ObservedObject private var audioPlayerB: AudioPlayer
     private var players = [TrackCode: AudioPlayer]()
-    @State private var playerProgress: Double = 0
+    @State private var sliderProgress: Double = 0
 
 //
 
@@ -33,8 +33,10 @@ struct ABXTestingView: View {
             Spacer()
             VStack {
                 Text("Currently playing " + testingState.currentlyPlayingTrack.rawValue)
-                Slider(value: $playerProgress, in: 0.0...1, step: 0.1)
-                    .padding([.leading, .trailing], 20)
+                Slider(value: $sliderProgress, in: 0.0...1, step: 0.05) { _ in
+                    presenter.didChangeSliderProgress(to: sliderProgress)
+                }
+                .padding([.leading, .trailing], 20)
             }
             Spacer()
             HStack {
@@ -47,10 +49,9 @@ struct ABXTestingView: View {
                 .padding(20)
         }.onAppear {
             presenter.didAppear()
-        }.onChange(of: players[testingState.currentlyPlayingTrack]?.progress ?? 0.0) { newValue in
-            playerProgress = newValue
-        }.onChange(of: playerProgress) { newValue in
-            players[testingState.currentlyPlayingTrack]?.progress = newValue
+        }
+        .onChange(of: players[testingState.currentlyPlayingTrack]?.progress ?? 0.0) { newValue in
+            sliderProgress = newValue
         }
     }
 

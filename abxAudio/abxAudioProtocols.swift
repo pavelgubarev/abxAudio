@@ -12,6 +12,7 @@ protocol ABXTestingPresenterProtocol {
     func didTapPlay(_ track: TrackCode)
     func didTapAnswer(_ track: TrackCode)
     func getAudioPlayer(for track: TrackCode) -> AudioPlayer
+    func didChangeSliderProgress(to progress: Double)
 }
 
 protocol ABXTestingViewProtocol {

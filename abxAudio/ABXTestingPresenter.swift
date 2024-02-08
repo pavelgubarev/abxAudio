@@ -14,7 +14,6 @@ public enum TrackCode: String, CaseIterable {
 }
 
 final class ABXTestingPresenter: ABXTestingPresenterProtocol {
-
     private var testingState: TestingState
     private var audioPlayers = [TrackCode: AudioPlayer]()
 
@@ -27,11 +26,19 @@ final class ABXTestingPresenter: ABXTestingPresenterProtocol {
         setNextCorrectAnswer()
     }
 
-    func didTapPlay(_ track: TrackCode) {
-        testingState.currentlyPlayingTrack = track
+    func didTapPlay(_ chosenTrack: TrackCode) {
+        var trackToPlay: TrackCode
 
-        for code in TrackCode.allCases {
-            if code == track {
+        if chosenTrack == .X {
+            trackToPlay = testingState.correctAnswer
+        } else {
+            trackToPlay = chosenTrack
+        }
+
+        testingState.currentlyPlayingTrack = chosenTrack
+
+        for code in [TrackCode.A, TrackCode.B] {
+            if code == trackToPlay {
                 audioPlayers[code]?.playOrPause()
             } else {
                 audioPlayers[code]?.pause()
@@ -46,6 +53,16 @@ final class ABXTestingPresenter: ABXTestingPresenterProtocol {
         }
 
         setNextCorrectAnswer()
+    }
+
+    func didChangeSliderProgress(to progress: Double) {
+        syncProgress(to: progress)
+    }
+
+    private func syncProgress(to progress: Double) {
+        audioPlayers.values.forEach { player in
+            player.setProgress(progress)
+        }
     }
 
     public func getAudioPlayer(for track: TrackCode) -> AudioPlayer {
