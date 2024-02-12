@@ -8,7 +8,7 @@
 import Foundation
 
 final class TestingState: ObservableObject {
-    @Published var currentlyPlayingTrack: TrackCode = .A
+    @Published var userChosenTrack: TrackCode = .A
     @Published var answersCount: Int = 0
     @Published var correctAnswersCount: Int = 0
     @Published var correctAnswer: TrackCode = .A

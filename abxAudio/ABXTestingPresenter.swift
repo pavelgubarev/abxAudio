@@ -14,6 +14,7 @@ public enum TrackCode: String, CaseIterable {
 }
 
 final class ABXTestingPresenter: ABXTestingPresenterProtocol {
+    
     private var testingState: TestingState
     private var audioPlayers = [TrackCode: AudioPlayer]()
 
@@ -35,7 +36,7 @@ final class ABXTestingPresenter: ABXTestingPresenterProtocol {
             trackToPlay = chosenTrack
         }
 
-        testingState.currentlyPlayingTrack = chosenTrack
+        testingState.userChosenTrack = chosenTrack
 
         for code in [TrackCode.A, TrackCode.B] {
             if code == trackToPlay {

@@ -10,14 +10,20 @@ import AVKit
 
 struct ABXTestingView: View {
 
-    let presenter: ABXTestingPresenterProtocol
+    private let presenter: ABXTestingPresenterProtocol
     @ObservedObject private var testingState: TestingState
     @ObservedObject private var audioPlayerA: AudioPlayer
     @ObservedObject private var audioPlayerB: AudioPlayer
     private var players = [TrackCode: AudioPlayer]()
     @State private var sliderProgress: Double = 0
 
-//
+    var actuallyPlayingTrack: TrackCode {
+        if testingState.userChosenTrack == .X {
+            return testingState.correctAnswer
+        } else {
+            return testingState.userChosenTrack
+        }
+    }
 
     var body: some View {
         VStack {
@@ -32,7 +38,7 @@ struct ABXTestingView: View {
             }
             Spacer()
             VStack {
-                Text("Currently playing " + testingState.currentlyPlayingTrack.rawValue)
+                Text("Currently playing " + testingState.userChosenTrack.rawValue)
                 Slider(value: $sliderProgress, in: 0.0...1, step: 0.05) { _ in
                     presenter.didChangeSliderProgress(to: sliderProgress)
                 }
@@ -50,7 +56,7 @@ struct ABXTestingView: View {
         }.onAppear {
             presenter.didAppear()
         }
-        .onChange(of: players[testingState.currentlyPlayingTrack]?.progress ?? 0.0) { newValue in
+        .onChange(of: players[actuallyPlayingTrack]?.progress ?? 0.0) { newValue in
             sliderProgress = newValue
         }
     }
