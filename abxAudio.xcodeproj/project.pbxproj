@@ -7,19 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E34B7D92B7F79A600B114E7 /* GetFilesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E34B7D82B7F79A600B114E7 /* GetFilesModels.swift */; };
 		4E7CD6992B5E869D002547B1 /* testFiles in Resources */ = {isa = PBXBuildFile; fileRef = 4E7CD6982B5E869D002547B1 /* testFiles */; };
+		4EB8844E2B7A52CD00F23B33 /* GetFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB8844D2B7A52CD00F23B33 /* GetFilesView.swift */; };
+		4EB884512B7A5BB800F23B33 /* GetFilesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB884502B7A5BB800F23B33 /* GetFilesPresenter.swift */; };
+		4EB884532B7A5BC800F23B33 /* GetFilesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB884522B7A5BC800F23B33 /* GetFilesInteractor.swift */; };
+		4EB884552B7A5D3700F23B33 /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB884542B7A5D3700F23B33 /* FileDownloader.swift */; };
 		4EDCBF142B1DEB3E000746C9 /* abxAudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCBF132B1DEB3E000746C9 /* abxAudioApp.swift */; };
 		4EDCBF182B1DEB41000746C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCBF172B1DEB41000746C9 /* Assets.xcassets */; };
 		4EDCBF1B2B1DEB41000746C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDCBF1A2B1DEB41000746C9 /* Preview Assets.xcassets */; };
 		4EDCBF222B1DEBA0000746C9 /* ABXTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCBF212B1DEBA0000746C9 /* ABXTestingView.swift */; };
 		4EDCBF242B21C75A000746C9 /* ABXTestingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCBF232B21C75A000746C9 /* ABXTestingPresenter.swift */; };
 		4EDCBF262B21CC22000746C9 /* abxAudioProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCBF252B21CC22000746C9 /* abxAudioProtocols.swift */; };
-		4EDCBF282B274877000746C9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCBF272B274877000746C9 /* Models.swift */; };
+		4EDCBF282B274877000746C9 /* ABXTestingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDCBF272B274877000746C9 /* ABXTestingModels.swift */; };
 		4EE8F6FF2B57F0CE000560A1 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8F6FE2B57F0CE000560A1 /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E34B7D82B7F79A600B114E7 /* GetFilesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFilesModels.swift; sourceTree = "<group>"; };
 		4E7CD6982B5E869D002547B1 /* testFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = testFiles; sourceTree = "<group>"; };
+		4EB8844D2B7A52CD00F23B33 /* GetFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFilesView.swift; sourceTree = "<group>"; };
+		4EB884502B7A5BB800F23B33 /* GetFilesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFilesPresenter.swift; sourceTree = "<group>"; };
+		4EB884522B7A5BC800F23B33 /* GetFilesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFilesInteractor.swift; sourceTree = "<group>"; };
+		4EB884542B7A5D3700F23B33 /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
 		4EDCBF102B1DEB3E000746C9 /* abxAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = abxAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDCBF132B1DEB3E000746C9 /* abxAudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abxAudioApp.swift; sourceTree = "<group>"; };
 		4EDCBF172B1DEB41000746C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,7 +37,7 @@
 		4EDCBF212B1DEBA0000746C9 /* ABXTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABXTestingView.swift; sourceTree = "<group>"; };
 		4EDCBF232B21C75A000746C9 /* ABXTestingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABXTestingPresenter.swift; sourceTree = "<group>"; };
 		4EDCBF252B21CC22000746C9 /* abxAudioProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abxAudioProtocols.swift; sourceTree = "<group>"; };
-		4EDCBF272B274877000746C9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		4EDCBF272B274877000746C9 /* ABXTestingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABXTestingModels.swift; sourceTree = "<group>"; };
 		4EE8F6FE2B57F0CE000560A1 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,6 +52,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EB8844C2B7A528D00F23B33 /* ABXTesting */ = {
+			isa = PBXGroup;
+			children = (
+				4EDCBF272B274877000746C9 /* ABXTestingModels.swift */,
+				4EDCBF212B1DEBA0000746C9 /* ABXTestingView.swift */,
+				4EDCBF232B21C75A000746C9 /* ABXTestingPresenter.swift */,
+				4EE8F6FE2B57F0CE000560A1 /* AudioPlayer.swift */,
+			);
+			path = ABXTesting;
+			sourceTree = "<group>";
+		};
+		4EB8844F2B7A5BA700F23B33 /* getFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4EB8844D2B7A52CD00F23B33 /* GetFilesView.swift */,
+				4EB884502B7A5BB800F23B33 /* GetFilesPresenter.swift */,
+				4EB884522B7A5BC800F23B33 /* GetFilesInteractor.swift */,
+				4EB884542B7A5D3700F23B33 /* FileDownloader.swift */,
+				4E34B7D82B7F79A600B114E7 /* GetFilesModels.swift */,
+			);
+			path = getFiles;
+			sourceTree = "<group>";
+		};
 		4EDCBF072B1DEB3E000746C9 = {
 			isa = PBXGroup;
 			children = (
@@ -63,13 +96,11 @@
 			children = (
 				4E7CD6982B5E869D002547B1 /* testFiles */,
 				4EDCBF132B1DEB3E000746C9 /* abxAudioApp.swift */,
-				4EDCBF212B1DEBA0000746C9 /* ABXTestingView.swift */,
-				4EDCBF232B21C75A000746C9 /* ABXTestingPresenter.swift */,
-				4EDCBF272B274877000746C9 /* Models.swift */,
-				4EE8F6FE2B57F0CE000560A1 /* AudioPlayer.swift */,
+				4EB8844C2B7A528D00F23B33 /* ABXTesting */,
 				4EDCBF252B21CC22000746C9 /* abxAudioProtocols.swift */,
 				4EDCBF172B1DEB41000746C9 /* Assets.xcassets */,
 				4EDCBF192B1DEB41000746C9 /* Preview Content */,
+				4EB8844F2B7A5BA700F23B33 /* getFiles */,
 			);
 			path = abxAudio;
 			sourceTree = "<group>";
@@ -153,11 +184,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E34B7D92B7F79A600B114E7 /* GetFilesModels.swift in Sources */,
 				4EDCBF262B21CC22000746C9 /* abxAudioProtocols.swift in Sources */,
 				4EDCBF242B21C75A000746C9 /* ABXTestingPresenter.swift in Sources */,
+				4EB884532B7A5BC800F23B33 /* GetFilesInteractor.swift in Sources */,
 				4EDCBF222B1DEBA0000746C9 /* ABXTestingView.swift in Sources */,
+				4EB8844E2B7A52CD00F23B33 /* GetFilesView.swift in Sources */,
+				4EB884552B7A5D3700F23B33 /* FileDownloader.swift in Sources */,
 				4EDCBF142B1DEB3E000746C9 /* abxAudioApp.swift in Sources */,
-				4EDCBF282B274877000746C9 /* Models.swift in Sources */,
+				4EB884512B7A5BB800F23B33 /* GetFilesPresenter.swift in Sources */,
+				4EDCBF282B274877000746C9 /* ABXTestingModels.swift in Sources */,
 				4EE8F6FF2B57F0CE000560A1 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

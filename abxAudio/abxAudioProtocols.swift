@@ -18,3 +18,11 @@ protocol ABXTestingPresenterProtocol {
 protocol ABXTestingViewProtocol {
     func play(_ track: TrackCode)
 }
+
+protocol GetFilesPresenterProtocol: AnyObject {
+    func downloadDemoFiles() 
+}
+
+protocol GetFilesInteractorProtocol: AnyObject {
+    func downloadAFile(url: String, delegate: FileDownloadingDelegate)
+}

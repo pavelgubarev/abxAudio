@@ -13,15 +13,15 @@ struct abxAudioApp: App {
         WindowGroup {
 
             // hardcode so far
-            let testingState = TestingState()
-            let tracksToCompare = [TrackCode.A: "Time-30", TrackCode.B: "Time-50"]
-
-            let presenter = ABXTestingPresenter(testingState: testingState, tracksToTest: tracksToCompare)
-
-            ABXTestingView(
-                presenter: presenter,
-                testingState: testingState
-            )
+//            let testingState = TestingState()
+//            let tracksToCompare = [TrackCode.A: "Time-30", TrackCode.B: "Time-50"]
+//
+//            let presenter = ABXTestingPresenter(testingState: testingState, tracksToTest: tracksToCompare)
+//
+//            ABXTestingView(
+//                presenter: presenter,
+//                testingState: testingState
+//            )
         }
     }
 }
