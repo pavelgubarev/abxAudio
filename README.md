@@ -1,1 +1,1 @@
-An app to compare two audio track with the feature of ABX-testing.
+An app to do ABX-testing of two audio tracks
